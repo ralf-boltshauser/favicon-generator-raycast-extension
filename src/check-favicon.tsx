@@ -23,7 +23,12 @@ export default function Command(
       await showToast({
         style: Toast.Style.Failure,
         title: "Error checking favicons",
-        message: error instanceof Error ? error.message : "Unknown error occurred",
+        message:
+          error instanceof Error && error.message.includes("undici")
+            ? "No web app found on that port"
+            : error instanceof Error
+              ? error.message
+              : "Unknown error occurred",
       });
     }
   };

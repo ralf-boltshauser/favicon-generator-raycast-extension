@@ -2,12 +2,9 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "favicon-generator",
   "title": "Favicon Generator",
-  "description": "Generate favicons",
+  "description": "Generate and validate website favicons in various sizes and formats",
   "icon": "extension-icon.png",
   "author": "ralf_boltshauser",
-  "contributors": [
-    "ralf_boltshauser"
-  ],
   "categories": [
     "Developer Tools",
     "Design Tools"
@@ -17,15 +14,15 @@
     {
       "name": "generate-favicon",
       "title": "Generate Favicon",
-      "subtitle": "Helps you generate favicon for your website.",
-      "description": "Generate favicons for your website",
+      "subtitle": "Website Icons",
+      "description": "Generate favicons in multiple sizes and formats for your website",
       "mode": "view"
     },
     {
       "name": "check-favicon",
       "title": "Check Favicon",
-      "subtitle": "Check favicons on your website",
-      "description": "Check if your website's favicons are properly configured",
+      "subtitle": "Website Icons",
+      "description": "Validate favicon configuration and presence on your website",
       "mode": "view",
       "arguments": [
         {
