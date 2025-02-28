@@ -42,7 +42,7 @@ async function execCommand(command: string, args: string[], cwd?: string): Promi
 async function ensureRealFaviconInstalled(): Promise<void> {
   const tempInstallDir = path.join(os.tmpdir(), "favicon-generator-temp");
   const env = await getShellEnv();
-  const npxPath = env.NPX_PATH || "npx";
+  const npxPath = "npx";
 
   if (!fs.existsSync(tempInstallDir)) {
     fs.mkdirSync(tempInstallDir, { recursive: true });
@@ -95,8 +95,7 @@ export async function generateFavicon(
   const tempInstallDir = path.join(tempDir, "favicon-generator-temp");
   const configPath = path.join(tempDir, `favicon-settings-${Date.now()}.json`);
   const outputDataPath = path.join(tempDir, `output-data-${Date.now()}.json`);
-  const env = await getShellEnv();
-  const npxPath = env.NPX_PATH || "npx";
+  const npxPath = "npx";
 
   try {
     await ensureRealFaviconInstalled();
@@ -181,8 +180,7 @@ export async function generateFavicon(
 
 export async function checkFavicon(port?: string, hostname: string = "localhost"): Promise<string> {
   const tempInstallDir = path.join(os.tmpdir(), "favicon-generator-temp");
-  const env = await getShellEnv();
-  const npxPath = env.NPX_PATH || "npx";
+  const npxPath = "npx";
 
   await ensureRealFaviconInstalled();
 
